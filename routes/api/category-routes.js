@@ -24,21 +24,43 @@ router.get('/:id', async (req, res) => {
       include: [{model: Product}]
     })
      res.status(200).json(ctgry);
-  } catch (err) {
-    res.status(500).json(err);
+  } catch (error) {
+    res.status(500).json(error);
    }
 });
 
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
   // create a new category
+  try {
+    const ctgry = await Category.create(req.body);
+    res.status(200).json(ctgry);
+  } catch (error) {
+    res.status(400).json(error);
+  }
 });
 
-router.put('/:id', (req, res) => {
+router.put('/:id', async (req, res) => {
   // update a category by its `id` value
-});
+  try {
+    const ctgry = await Category.update(req.body, {
+      where: {
+        id: req.params.id,
+      },
+    }); 
+    res.status(200).json(ctgry); 
+    }
+      catch (error) {
+        res.status(500).json(error);
+  }});
 
 router.delete('/:id', (req, res) => {
   // delete a category by its `id` value
+  try {
+    const ctgry = Category.destroy({ where: { id: req.params.id } });
+    res.status(200).json(ctgry);
+  } catch (error) {
+    res.status(500).json(error);
+  }
 });
 
 module.exports = router;
