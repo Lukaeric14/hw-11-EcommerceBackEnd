@@ -19,8 +19,8 @@ Application made to manage your ecomerce records.
 
 ## Walkthrough
 
-Install Link:
-Walkthrough Link: 
+Install Link: https://drive.google.com/file/d/18O30spgAKKOpRQsuvt19Gv_w5rCI5abh/view?usp=sharing
+Walkthrough Link: https://drive.google.com/file/d/1FK-Ogso5GQzz-eGogfSpRehsbEhr-ZJC/view?usp=sharing
 
 ## Questions
 
